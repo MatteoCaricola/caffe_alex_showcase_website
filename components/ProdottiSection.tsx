@@ -11,13 +11,14 @@ export const ProdottiSection: React.FC<ProdottiSectionProps> = ({ onDetailClick 
     <section id="prodotti" className="bg-white">
       {/* Block 1: Image Left, Text Right */}
       <div className="grid md:grid-cols-2 md:min-h-[600px]">
-        <div className="relative h-[400px] md:h-auto overflow-hidden group">
+        <div className="relative h-[400px] md:h-full overflow-hidden group" style={{minHeight: '600px'}}>
           <img
             src="https://lh3.googleusercontent.com/pw/AP1GczMb7p2x2pf74DCSB6iocwJ4BiU_slwMyGNvbaZWYvdSOCKJN7qXCShU4uiEGWbntWyupJ5Qk_UjSglyBVZOWkO4oQkh28BYOs-dPBxtRq-S_6ZcyE7ixVB8lXeMIkdefqQHmZq9lDqwkAFLiJ2hUudt=w525-h1012-s-no-gm?authuser=0"
             alt="Caffè Alex Double Cream and Aromatic & Creamy blends"
-            className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            style={{height: '600px'}}
+            className="w-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-black/5"></div>
+          <div className="absolute inset-0 bg-coffee-900/10"></div>
         </div>
         <div className="flex flex-col justify-center bg-coffee-50 p-12 md:p-24">
           <span className="mb-4 text-xs font-bold tracking-widest text-coffee-500 uppercase">I Nostri Prodotti</span>
