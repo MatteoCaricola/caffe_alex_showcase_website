@@ -37,17 +37,17 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
     {
       title: "Caffè in grani - Miscela Gold",
       description: "Caffè in grani - Miscela Gold.",
-      image: "/assets/homePage/presentation_gold.png"
+      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_gold.png`
     },
     {
       title: "Caffè in grani - Miscela Black",
       description: "Caffè in grani - Miscela Black.",
-      image: "/assets/homePage/presentation_black.png"
+      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_black.png`
     },
     {
       title: "Caffè in grani - Miscela White",
       description: "Caffè in grani - Miscela White.",
-      image: "/assets/homePage/presentation_white.png"
+      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_white.png`
     }
   ];
 
@@ -55,22 +55,22 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
     {
       title: "Caffè al Ginseng - Rosso",
       description: "Caffè al Ginseng - Rosso.",
-      image: "/assets/product-detail/presentation_ginseng_rosso.png"
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_rosso.png`
     },
     {
       title: "Caffè al Ginseng - Primus",
       description: "Caffè al Ginseng - Primus.",
-      image: "/assets/product-detail/presentation_ginseng_primus.png"
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_primus.png`
     },
     {
       title: "Caffè al Ginseng - Platinum",
       description: "Caffè al Ginseng - Platinum.",
-      image: "/assets/product-detail/presentation_ginseng_platinum.png"
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum.png`
     },
     {
       title: "Caffè al Ginseng - Platinum senza saccarosio",
       description: "Caffè al Ginseng - Platinum senza saccarosio.",
-      image: "/assets/product-detail/presentation_ginseng_platinum_senza_saccarosio.png"
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum_senza_saccarosio.png`
     }
   ];
 
@@ -78,7 +78,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
     {
       title: "Caffè in ciale E.S.E.",
       description: "Caffè in ciale E.S.E.",
-      image: "/assets/product-detail/presentation_cialde.png"
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_cialde.png`
     }
   ];
 
@@ -86,12 +86,12 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
     {
       title: "Zucchero bianco extra fine - alta solubilità",
       description: "Zucchero bianco extra fine - alta solubilità",
-      image: "/assets/product-detail/presentation_zucchero.png"
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero.png`
     },
     {
       title: "Zucchero di canna extra fine",
       description: "Zucchero di canna extra fine",
-      image: "/assets/product-detail/presentation_zucchero_canna.png"
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero_canna.png`
     }
   ];
 
@@ -102,7 +102,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/assets/product-detail/product_detail_header.png"
+            src={`${import.meta.env.BASE_URL}assets/product-detail/product_detail_header.png`}
             alt="Caffè Alex selection background"
             className="h-full w-full object-cover opacity-60"
           />

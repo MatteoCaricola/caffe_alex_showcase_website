@@ -12,7 +12,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/assets/homePage/roasted_caffe.avif"
+          src={`${import.meta.env.BASE_URL}assets/homePage/roasted_caffe.avif`}
           alt="Premium roasted coffee beans close up"
           className="h-full w-full object-cover"
         />

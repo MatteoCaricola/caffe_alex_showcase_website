@@ -13,7 +13,7 @@ export const ProdottiSection: React.FC<ProdottiSectionProps> = ({ onDetailClick 
       <div className="grid md:grid-cols-2 md:min-h-[600px]">
         <div className="relative h-[400px] md:h-full overflow-hidden group" style={{ minHeight: '600px' }}>
           <img
-            src="/assets/homePage/raw_coffe.png"
+            src={`${import.meta.env.BASE_URL}assets/homePage/raw_coffe.png`}
             alt="Caffè Alex Double Cream and Aromatic & Creamy blends"
             style={{ height: '600px' }}
             className="w-full object-cover transition-transform duration-1000 group-hover:scale-105"

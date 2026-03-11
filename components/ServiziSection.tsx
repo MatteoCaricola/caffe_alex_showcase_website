@@ -30,7 +30,7 @@ export const ServiziSection: React.FC<ServiziSectionProps> = ({ onDetailClick })
         </div>
         <div className="relative h-[400px] md:h-auto overflow-hidden group order-1 md:order-2">
           <img
-            src="/assets/homePage/Tazzine_Caffè_Alex.png"
+            src={`${import.meta.env.BASE_URL}assets/homePage/Tazzine_Caffè_Alex.png`}
             alt="Caffè Alex Tazzina"
             className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
             onError={(e) => {
