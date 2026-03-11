@@ -7,7 +7,7 @@ const PRODUCTS: CoffeeProduct[] = [
     name: "Miscela Gold",
     origin: "Ethiopia",
     roast: "Light",
-    image: "https://lh3.googleusercontent.com/pw/AP1GczOdBKfdSHZkUWp_lpXB0S5BEmqWJmA2ioXNJkZ_-3U2skPYIYCcNM8RhATLGt0oBKTFeawuT9bwn8JWwo1SPUCr_V_VTNg2XSTSauJSxWfq8_JCr36YWczffVjwKPhlRDq3051-g00anZSwxXvMIadb=w982-h650-s-no-gm?authuser=0",
+    image: "/assets/homePage/presentation_gold.png",
     tags: ["Floral", "Citrus", "Bright"],
     description: "A delicate light roast with notes of jasmine and bergamot. A true classic."
   },
@@ -16,7 +16,7 @@ const PRODUCTS: CoffeeProduct[] = [
     name: "Miscela Black",
     origin: "Colombia",
     roast: "Medium",
-    image: "https://lh3.googleusercontent.com/pw/AP1GczPensaYegAvqy4Q98Nf4Ae27wAaTm3IMUxO4qs351jNu5O_wwNoC9Mp8O1GRcDwVIqS7p4Hvo6mFxdsR4yjbRs2J18-5YodH3dnKSxmtmkZK3_waW2LX6jW9DHxSzkPpOdzfm29E30-8iLi3E0JUc72=w998-h665-s-no-gm?authuser=0",
+    image: "/assets/homePage/presentation_black.png",
     tags: ["Caramel", "Nutty", "Balanced"],
     description: "Our signature medium roast. A harmonious balance of caramel sweetness."
   },
@@ -25,7 +25,7 @@ const PRODUCTS: CoffeeProduct[] = [
     name: "MIscela White",
     origin: "Indonesia",
     roast: "Dark",
-    image: "https://lh3.googleusercontent.com/pw/AP1GczP-Z20Uqk1IiBtu0dSi7Wmo0OmHcffJN-jYL7L77yd8guaaKa1t9beA6XNwswPfHWgEWYqFoIptwYJEAyjEgF9nYdyIGTmnPUkrz5EogVilhIerVfNWa-0-JnLsn7orBPhj28sc4hhzU9C9iP5uJAXj=w970-h832-s-no-gm?authuser=0",
+    image: "/assets/homePage/presentation_white.png",
     tags: ["Earthy", "Spicy", "Full Body"],
     description: "Bold and intense. A dark roast with distinct spicy, earthy undertones."
   },

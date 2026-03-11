@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
     <footer id="contatti" className="bg-coffee-50 text-coffee-900 border-t border-coffee-200">
       <div className="mx-auto max-w-7xl px-6 py-20 md:px-12">
         <div className="flex flex-col items-center text-center">
-          
+
           <div className="mb-8 scale-125">
             <Logo />
           </div>
@@ -24,22 +24,22 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="grid w-full max-w-2xl gap-8 border-t border-coffee-200 pt-10 text-sm md:grid-cols-3">
-             <div className="flex flex-col items-center gap-2">
-                <MapPin size={20} className="text-coffee-500" />
-                <span>123 Roast Blvd, Seattle</span>
-             </div>
-             <div className="flex flex-col items-center gap-2">
-                <Mail size={20} className="text-coffee-500" />
-                <span>info@caffealex.com</span>
-             </div>
-             <div className="flex flex-col items-center gap-2">
-                <Phone size={20} className="text-coffee-500" />
-                <span>+39 345 678 9012</span>
-             </div>
+            <div className="flex flex-col items-center gap-2">
+              <MapPin size={20} className="text-coffee-500" />
+              <span>Avezzano</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Mail size={20} className="text-coffee-500" />
+              <span>info@caffealex.com</span>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <Phone size={20} className="text-coffee-500" />
+              <span>+39 345 678 9012</span>
+            </div>
           </div>
 
         </div>
-        
+
         <div className="mt-16 text-center text-xs text-coffee-400">
           <p>&copy; 2024 Caffè Alex. All rights reserved.</p>
         </div>

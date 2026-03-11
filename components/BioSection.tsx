@@ -11,7 +11,7 @@ export const BioSection: React.FC = () => {
           <div className="relative order-2 md:order-1 flex items-end overflow-hidden group">
             <div className="relative w-full h-[600px] md:h-full">
               <img
-                src="https://lh3.googleusercontent.com/pw/AP1GczMDF2wuedjb2ahLqJ7gsa5sZn7fWmp5Dr3GG3ggUvBQXWwkDZtiLFoV-TTkaPG7kn7oN7tDDJQOWkQDjiIZNyvwNZryQKKRWZuNRFfygTSNyRDDbE_AmF1e1IFTOC_FnCmPSkJa7alrAUu6x-OFnZmT=w607-h911-s-no-gm?authuser=0"
+                src="/assets/homePage/bibliography.jpeg"
                 alt="Alex Mollicone"
                 className="h-full w-full object-cover grayscale transition-transform duration-[3s] group-hover:scale-105"
                 style={{ filter: 'contrast(1.2) brightness(0.8) sepia(0.1)' }}

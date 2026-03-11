@@ -11,9 +11,9 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
     <div id="home" className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=80&w=1920" 
-          alt="Premium roasted coffee beans close up" 
+        <img
+          src="/assets/homePage/roasted_caffe.avif"
+          alt="Premium roasted coffee beans close up"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-coffee-950/40" />
@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           Non solo caffè.<br className="hidden sm:block" /> Un'esperienza irripetibile.
         </p>
       </div>
-      
+
       {/* Scroll indicator */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce text-white/50 cursor-pointer z-20" onClick={() => scrollToSection(Section.PRODOTTI)}>
         <ChevronDown size={32} strokeWidth={1} />
