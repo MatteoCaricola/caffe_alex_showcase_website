@@ -7,9 +7,24 @@ import { Logo } from './Logo';
 interface NavbarProps {
   scrollToSection: (section: Section) => void;
   currentView: 'home' | 'details';
+  activeView: 'home' | 'product-details' | 'craft-details' | 'contatti';
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView }) => {
+export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, activeView }) => {
+
+  const activeSection = {
+    'product-details': Section.PRODOTTI,
+    'craft-details':   Section.SERVIZI,
+    'contatti':        Section.CONTATTI,
+    'home':            Section.HOME,
+  }[activeView];
+
+  const btnClass = (section: Section) => {
+    const isActive = activeSection === section;
+    const base = 'text-xs font-bold uppercase tracking-widest transition-all';
+    if (isActive) return `${base} px-3 py-1 bg-coffee-900 text-white`;
+    return `${base} hover:opacity-70`;
+  };
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -38,10 +53,10 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView }) 
 
         {/* Desktop Links Left */}
         <div className="hidden items-center gap-8 md:flex w-1/3">
-          <button onClick={() => scrollToSection(Section.HOME)} className="text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70">
+          <button onClick={() => scrollToSection(Section.HOME)} className={btnClass(Section.HOME)}>
             Home
           </button>
-          <button onClick={() => scrollToSection(Section.PRODOTTI)} className="text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70">
+          <button onClick={() => scrollToSection(Section.PRODOTTI)} className={btnClass(Section.PRODOTTI)}>
             Prodotti
           </button>
         </div>
@@ -53,13 +68,10 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView }) 
 
         {/* Desktop Links Right */}
         <div className="hidden items-center justify-end gap-8 md:flex w-1/3">
-          <button onClick={() => scrollToSection(Section.SERVIZI)} className="text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70">
+          <button onClick={() => scrollToSection(Section.SERVIZI)} className={btnClass(Section.SERVIZI)}>
             Servizi
           </button>
-          <button 
-            onClick={() => scrollToSection(Section.CONTATTI)}
-            className="text-xs font-bold uppercase tracking-widest transition-opacity hover:opacity-70 ml-8"
-          >
+          <button onClick={() => scrollToSection(Section.CONTATTI)} className={`${btnClass(Section.CONTATTI)} ml-8`}>
             Contatti
           </button>
         </div>
@@ -84,7 +96,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView }) 
                   scrollToSection(link.section);
                   setIsMobileMenuOpen(false);
                 }}
-                className="text-lg font-serif italic"
+                className={`text-lg font-serif italic ${activeSection === link.section ? 'underline underline-offset-4' : ''}`}
               >
                 {link.label}
               </button>

@@ -7,18 +7,32 @@ import { ServiziSection } from './components/ServiziSection';
 import { ProductList } from './components/ProductList';
 import { ProductDetail } from './components/ProductDetail';
 import { CraftDetail } from './components/CraftDetail';
+import { ContattiDetail } from './components/ContattiDetail';
 import { BioSection } from './components/BioSection';
 import { Footer } from './components/Footer';
 import { Section } from './types';
 
 function App() {
-  const [view, setView] = useState<'home' | 'product-details' | 'craft-details'>('home');
+  const [view, setView] = useState<'home' | 'product-details' | 'craft-details' | 'contatti'>('home');
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [view]);
 
   const scrollToSection = (section: Section) => {
+    if (section === Section.PRODOTTI) {
+      setView('product-details');
+      return;
+    }
+    if (section === Section.SERVIZI) {
+      setView('craft-details');
+      return;
+    }
+    if (section === Section.CONTATTI) {
+      setView('contatti');
+      return;
+    }
+
     if (view !== 'home') {
       setView('home');
       setTimeout(() => {
@@ -29,7 +43,7 @@ function App() {
       }, 150);
       return;
     }
-    
+
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -42,7 +56,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-coffee-900">
-      <Navbar scrollToSection={scrollToSection} currentView={view === 'home' ? 'home' : 'details'} />
+      <Navbar scrollToSection={scrollToSection} currentView={view === 'home' ? 'home' : 'details'} activeView={view} />
       
       <main>
         {view === 'home' && (
@@ -56,6 +70,7 @@ function App() {
         )}
         {view === 'product-details' && <ProductDetail onBack={goHome} />}
         {view === 'craft-details' && <CraftDetail onBack={goHome} />}
+        {view === 'contatti' && <ContattiDetail onBack={goHome} />}
       </main>
 
       <Footer />

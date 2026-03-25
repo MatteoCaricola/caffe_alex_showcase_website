@@ -1,13 +1,11 @@
-
-import React, { useEffect, useRef } from 'react';
-import { ArrowLeft, Brush } from 'lucide-react';
+import React from "react";
+import { ArrowLeft, Brush } from "lucide-react";
 
 interface CraftDetailProps {
   onBack: () => void;
 }
 
 export const CraftDetail: React.FC<CraftDetailProps> = ({ onBack }) => {
-
   // ─── TESTO PRINCIPALE ────────────────────────────────────────────────────────
   const introTitle = "Personalizza il tuo stile";
   const introSubtitle = "Ogni dettaglio, a modo tuo.";
@@ -30,11 +28,15 @@ siamo qui per realizzarlo insieme a te.`;
   // Sostituisci i src con le tue foto dei prodotti personalizzati
   const gallery = [
     {
-      src: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=1200",
+      src: `${import.meta.env.BASE_URL}assets/craft-detail/presentation_tazzione.png`,
       caption: "Tazzine con logo personalizzato",
     },
     {
-      src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200",
+      src: `${import.meta.env.BASE_URL}assets/craft-detail/presentation_buste.png`,
+      caption: "Buste del caffè personalizzate con logo",
+    },
+    {
+      src: `${import.meta.env.BASE_URL}assets/craft-detail/presentation_accessori.png`,
       caption: "Accessori da caffè su misura",
     },
   ];
@@ -43,63 +45,28 @@ siamo qui per realizzarlo insieme a te.`;
   // Aggiungi qui le foto dei clienti che hanno personalizzato i prodotti
   const clientPhotos = [
     {
-      src: "https://images.unsplash.com/photo-1559056199-c020f545465c?auto=format&fit=crop&q=80&w=800",
-      label: "Bar Centrale",
+      src: `${import.meta.env.BASE_URL}assets/clienti/kiwi.jpeg`,
+      label: "Kiwi Bar",
     },
     {
-      src: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&q=80&w=800",
-      label: "Caffetteria Roma",
+      src: `${import.meta.env.BASE_URL}assets/clienti/lulu.jpeg`,
+      label: "Pasticceria Lulù",
     },
     {
-      src: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=800",
-      label: "Hotel Bellavista",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=800",
-      label: "Pasticceria Mille",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800",
-      label: "Bistrot del Porto",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&fit=crop&q=80&w=800",
-      label: "Lounge Bar 900",
+      src: `${import.meta.env.BASE_URL}assets/clienti/da_rossella.jpeg`,
+      label: "Ristorante Da Rossella",
     },
   ];
 
   // ─────────────────────────────────────────────────────────────────────────────
 
-  // Auto-scroll carosello: duplica le foto per scorrimento infinito
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    let pos = 0;
-    const speed = 0.5; // px per frame — aumenta per scorrere più veloce
-    let raf: number;
-
-    const tick = () => {
-      pos += speed;
-      // quando ha percorso metà (le foto originali), torna a 0
-      if (pos >= track.scrollWidth / 2) pos = 0;
-      track.style.transform = `translateX(-${pos}px)`;
-      raf = requestAnimationFrame(tick);
-    };
-
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
   return (
     <div className="bg-coffee-950 min-h-screen text-coffee-50 overflow-hidden">
-
       {/* Hero */}
       <div className="relative h-screen flex items-center px-6 md:px-24 pt-24">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=2000"
+            src={`${import.meta.env.BASE_URL}assets/craft-detail/presentation_tazzione.png`}
             className="w-full h-full object-cover opacity-25 grayscale"
             alt="Personalizzazione background"
           />
@@ -111,8 +78,13 @@ siamo qui per realizzarlo insieme a te.`;
             onClick={onBack}
             className="flex items-center gap-2 text-coffee-400 hover:text-white transition-colors mb-20 md:mb-32 group"
           >
-            <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
-            <span className="text-xs font-bold tracking-[0.3em] uppercase">Torna alla Home</span>
+            <ArrowLeft
+              size={20}
+              className="transition-transform group-hover:-translate-x-1"
+            />
+            <span className="text-xs font-bold tracking-[0.3em] uppercase">
+              Torna alla Home
+            </span>
           </button>
 
           <span className="text-coffee-500 font-bold tracking-[0.5em] text-xs uppercase block mb-6">
@@ -120,7 +92,10 @@ siamo qui per realizzarlo insieme a te.`;
           </span>
           <h1 className="font-serif text-6xl md:text-9xl text-white mb-10 leading-[0.9] tracking-tighter">
             {introTitle.split(" ").slice(0, 1).join(" ")} <br />
-            <span className="italic text-coffee-400">{introTitle.split(" ").slice(1, 3).join(" ")}</span> <br />
+            <span className="italic text-coffee-400">
+              {introTitle.split(" ").slice(1, 3).join(" ")}
+            </span>{" "}
+            <br />
             {introTitle.split(" ").slice(3).join(" ")}
           </h1>
           <p className="text-coffee-200 text-xl md:text-2xl font-light leading-relaxed max-w-xl border-l-2 border-coffee-800 pl-8">
@@ -132,13 +107,15 @@ siamo qui per realizzarlo insieme a te.`;
       {/* Sezione testo + lista prodotti */}
       <section className="py-32 px-6 md:px-24 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-12 gap-16 items-start">
-
           {/* Testo descrittivo */}
           <div className="md:col-span-7">
             <div className="flex items-center gap-4 mb-8">
               <Brush className="text-coffee-400" size={28} />
               <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
-                Come funziona la <span className="text-coffee-500 italic">personalizzazione</span>
+                Come funziona la{" "}
+                <span className="text-coffee-500 italic">
+                  personalizzazione
+                </span>
               </h2>
             </div>
             <p className="text-coffee-300 text-lg leading-relaxed whitespace-pre-line">
@@ -149,10 +126,15 @@ siamo qui per realizzarlo insieme a te.`;
           {/* Lista prodotti */}
           <div className="md:col-span-5 md:sticky md:top-32">
             <div className="bg-coffee-900 p-10 border-l-4 border-coffee-400">
-              <h3 className="font-serif text-2xl text-white mb-8">Cosa puoi personalizzare</h3>
+              <h3 className="font-serif text-2xl text-white mb-8">
+                Cosa puoi personalizzare
+              </h3>
               <ul className="space-y-4">
                 {items.map((item, i) => (
-                  <li key={i} className="flex items-center gap-4 text-coffee-200">
+                  <li
+                    key={i}
+                    className="flex items-center gap-4 text-coffee-200"
+                  >
                     <span className="w-6 h-px bg-coffee-500 block shrink-0"></span>
                     <span className="text-base">{item}</span>
                   </li>
@@ -163,16 +145,16 @@ siamo qui per realizzarlo insieme a te.`;
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* Galleria prodotti personalizzati */}
       <section className="pb-32 px-6 md:px-24 max-w-7xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl text-white mb-16 text-center">
-          Esempi di <span className="italic text-coffee-400">personalizzazione</span>
+          Esempi di{" "}
+          <span className="italic text-coffee-400">personalizzazione</span>
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {gallery.map((item, i) => (
             <div key={i} className="group">
               <div className="aspect-[4/3] overflow-hidden rounded-sm">
@@ -201,17 +183,24 @@ siamo qui per realizzarlo insieme a te.`;
           </p>
         </div>
 
-        {/* Track scorrevole — overflow nascosto dal parent */}
+        <style>{`
+          @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          .marquee-track { animation: marquee 40s linear infinite; }
+        `}</style>
+
+        {/* Track scorrevole CSS infinito */}
         <div className="overflow-hidden">
-          <div ref={trackRef} className="flex gap-6 w-max will-change-transform">
-            {/* Foto originali + duplicato per loop infinito */}
-            {[...clientPhotos, ...clientPhotos].map((photo, i) => (
-              <div key={i} className="w-72 shrink-0 group">
+          <div className="marquee-track flex w-max">
+            {[...clientPhotos, ...clientPhotos, ...clientPhotos, ...clientPhotos].map((photo, i) => (
+              <div key={i} className="w-72 shrink-0 mr-6">
                 <div className="aspect-[3/4] overflow-hidden rounded-sm">
                   <img
                     src={photo.src}
                     alt={photo.label}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <p className="mt-3 text-coffee-400 text-xs tracking-widest uppercase font-bold text-center">
@@ -235,7 +224,6 @@ siamo qui per realizzarlo insieme a te.`;
           Torna alla Home
         </button>
       </section>
-
     </div>
   );
 };
