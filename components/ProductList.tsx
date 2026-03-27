@@ -44,19 +44,21 @@ export const ProductList: React.FC = () => {
         </div>
 
         <div className="grid gap-12 md:grid-cols-3">
-          {PRODUCTS.map((product, idx) => (
+          {PRODUCTS.map((product) => (
             <div
               key={product.id}
               className="group relative flex flex-col items-center text-center"
             >
               {/* Image Circle */}
-              <div className="mb-8 relative w-64 h-64 rounded-full overflow-hidden border-4 border-coffee-800 transition-all duration-500 group-hover:border-coffee-400 group-hover:scale-105 shadow-2xl [will-change:transform]">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-                />
-                <div className="absolute inset-0 bg-coffee-950/20 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+              <div className="mb-8 transition-transform duration-500 group-hover:scale-105 [will-change:transform]">
+                <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-coffee-800 transition-colors duration-500 group-hover:border-coffee-400 shadow-2xl">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-coffee-950/20 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                </div>
               </div>
 
               {/* Text */}
