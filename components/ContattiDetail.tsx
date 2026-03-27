@@ -11,7 +11,7 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
     <div className="bg-coffee-950 min-h-screen text-coffee-50 overflow-hidden">
 
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
-      <div className="relative h-screen flex items-center px-6 md:px-24 pt-24">
+      <div className="relative h-[75vh] md:h-screen flex flex-col justify-start px-6 md:px-24 pt-28 md:pt-32">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&q=80&w=2000"
@@ -24,7 +24,7 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
         <div className="relative z-10 max-w-4xl">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-coffee-400 hover:text-white transition-colors mb-20 md:mb-32 group"
+            className="flex items-center gap-2 text-coffee-400 hover:text-white transition-colors mb-8 md:mb-16 group"
           >
             <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
             <span className="text-xs font-bold tracking-[0.3em] uppercase">Torna alla Home</span>

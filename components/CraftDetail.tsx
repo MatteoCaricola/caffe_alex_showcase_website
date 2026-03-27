@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { ArrowLeft, Brush } from "lucide-react";
 
 interface CraftDetailProps {
@@ -58,12 +58,57 @@ siamo qui per realizzarlo insieme a te.`;
     },
   ];
 
+  // ─── CAROSELLO: animazione JS + swipe touch ──────────────────────────────────
+  const marqueeRef  = useRef<HTMLDivElement>(null);
+  const posRef      = useRef(0);
+  const isDragging  = useRef(false);
+  const lastTouchX  = useRef(0);
+  const rafRef      = useRef<number>(0);
+
+  useEffect(() => {
+    const el = marqueeRef.current;
+    if (!el) return;
+
+    const SPEED = 1.5; // px per frame
+
+    const animate = () => {
+      if (!isDragging.current) {
+        const loopAt = el.scrollWidth / 2;
+        posRef.current -= SPEED;
+        if (posRef.current <= -loopAt) posRef.current += loopAt;
+      }
+      el.style.transform = `translateX(${posRef.current}px)`;
+      rafRef.current = requestAnimationFrame(animate);
+    };
+
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    isDragging.current = true;
+    lastTouchX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging.current || !marqueeRef.current) return;
+    const delta = e.touches[0].clientX - lastTouchX.current;
+    lastTouchX.current = e.touches[0].clientX;
+
+    const loopAt = marqueeRef.current.scrollWidth / 2;
+    posRef.current += delta;
+    while (posRef.current > 0)        posRef.current -= loopAt;
+    while (posRef.current <= -loopAt) posRef.current += loopAt;
+  };
+
+  const handleTouchEnd = () => { isDragging.current = false; };
+
   // ─────────────────────────────────────────────────────────────────────────────
 
   return (
     <div className="bg-coffee-950 min-h-screen text-coffee-50 overflow-hidden">
       {/* Hero */}
-      <div className="relative h-screen flex items-center px-6 md:px-24 pt-24">
+      <div className="relative h-[75vh] md:h-screen flex flex-col justify-start px-6 md:px-24 pt-28 md:pt-32">
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}assets/craft-detail/presentation_tazzione.png`}
@@ -76,15 +121,10 @@ siamo qui per realizzarlo insieme a te.`;
         <div className="relative z-10 max-w-4xl">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-coffee-400 hover:text-white transition-colors mb-20 md:mb-32 group"
+            className="flex items-center gap-2 text-coffee-400 hover:text-white transition-colors mb-8 md:mb-16 group"
           >
-            <ArrowLeft
-              size={20}
-              className="transition-transform group-hover:-translate-x-1"
-            />
-            <span className="text-xs font-bold tracking-[0.3em] uppercase">
-              Torna alla Home
-            </span>
+            <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
+            <span className="text-xs font-bold tracking-[0.3em] uppercase">Torna alla Home</span>
           </button>
 
           <span className="text-coffee-500 font-bold tracking-[0.5em] text-xs uppercase block mb-6">
@@ -183,17 +223,14 @@ siamo qui per realizzarlo insieme a te.`;
           </p>
         </div>
 
-        <style>{`
-          @keyframes marquee {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-          }
-          .marquee-track { animation: marquee 40s linear infinite; }
-        `}</style>
-
-        {/* Track scorrevole CSS infinito */}
-        <div className="overflow-hidden">
-          <div className="marquee-track flex w-max">
+        {/* Track scorrevole JS infinito con swipe */}
+        <div
+          className="overflow-hidden"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div ref={marqueeRef} className="flex w-max" style={{ willChange: 'transform' }}>
             {[...clientPhotos, ...clientPhotos, ...clientPhotos, ...clientPhotos].map((photo, i) => (
               <div key={i} className="w-72 shrink-0 mr-6">
                 <div className="aspect-[3/4] overflow-hidden rounded-sm">
@@ -210,6 +247,7 @@ siamo qui per realizzarlo insieme a te.`;
             ))}
           </div>
         </div>
+
       </section>
 
       {/* CTA finale */}

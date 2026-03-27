@@ -50,7 +50,7 @@ export const ProductList: React.FC = () => {
               className="group relative flex flex-col items-center text-center"
             >
               {/* Image Circle */}
-              <div className="mb-8 relative w-64 h-64 rounded-full overflow-hidden border-4 border-coffee-800 transition-all duration-500 group-hover:border-coffee-400 group-hover:scale-105 shadow-2xl">
+              <div className="mb-8 relative w-64 h-64 rounded-full overflow-hidden border-4 border-coffee-800 transition-all duration-500 group-hover:border-coffee-400 group-hover:scale-105 shadow-2xl [will-change:transform]">
                 <img
                   src={product.image}
                   alt={product.name}
