@@ -64,6 +64,7 @@ export const Footer: React.FC = () => {
 
         <div className="mt-16 text-center text-xs text-coffee-400">
           <p>&copy; 2024 Caffè Alex. All rights reserved.</p>
+          <p className="mt-1 text-coffee-200 text-[10px] select-none">v0.0.13</p>
         </div>
       </div>
     </footer>
