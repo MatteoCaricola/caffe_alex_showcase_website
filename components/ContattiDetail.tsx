@@ -1,6 +1,12 @@
-
-import React from 'react';
-import { ArrowLeft, MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
+import React from "react";
+import {
+  ArrowLeft,
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Facebook,
+} from "lucide-react";
 
 interface ContattiDetailProps {
   onBack: () => void;
@@ -9,7 +15,6 @@ interface ContattiDetailProps {
 export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
   return (
     <div className="bg-coffee-950 min-h-screen text-coffee-50 overflow-hidden">
-
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
       <div className="relative h-[75vh] md:h-screen flex flex-col justify-start px-6 md:px-24 pt-28 md:pt-32">
         <div className="absolute inset-0 z-0">
@@ -26,15 +31,21 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
             onClick={onBack}
             className="flex items-center gap-2 text-coffee-400 hover:text-white transition-colors mb-8 md:mb-16 group"
           >
-            <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
-            <span className="text-xs font-bold tracking-[0.3em] uppercase">Torna alla Home</span>
+            <ArrowLeft
+              size={20}
+              className="transition-transform group-hover:-translate-x-1"
+            />
+            <span className="text-xs font-bold tracking-[0.3em] uppercase">
+              Torna alla Home
+            </span>
           </button>
 
           <span className="text-coffee-500 font-bold tracking-[0.5em] text-xs uppercase block mb-6">
             Avezzano, Abruzzo
           </span>
           <h1 className="font-serif text-6xl md:text-9xl text-white mb-10 leading-[0.9] tracking-tighter">
-            Siamo<br />
+            Siamo
+            <br />
             <span className="italic text-coffee-400">qui</span>
           </h1>
           <p className="text-coffee-200 text-xl md:text-2xl font-light leading-relaxed max-w-xl border-l-2 border-coffee-800 pl-8">
@@ -44,7 +55,7 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
       </div>
 
       {/* ── Contatti ──────────────────────────────────────────────────────────── */}
-      <section className="py-32 px-6 md:px-24 max-w-4xl mx-auto">
+      <section className="py-16 md:py-32 px-6 md:px-24 max-w-4xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight mb-16">
           Come <span className="italic text-coffee-400">contattarci</span>
         </h2>
@@ -55,7 +66,9 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
               <MapPin size={20} className="text-coffee-400" />
             </div>
             <div>
-              <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-1">Zona</p>
+              <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-1">
+                Zona
+              </p>
               <p className="text-coffee-100 text-lg">Avezzano, L'Aquila</p>
               <p className="text-coffee-400 text-sm mt-1">Abruzzo, Italia</p>
             </div>
@@ -66,9 +79,14 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
               <Phone size={20} className="text-coffee-400" />
             </div>
             <div>
-              <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-1">Telefono</p>
-              <a href="tel:+393456789012" className="text-coffee-100 text-lg hover:text-white transition-colors">
-                +39 345 678 9012
+              <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-1">
+                Telefono
+              </p>
+              <a
+                href="tel:+393394458758"
+                className="text-coffee-100 text-lg hover:text-white transition-colors"
+              >
+                +39 339 445 8758
               </a>
             </div>
           </div>
@@ -78,9 +96,15 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
               <Mail size={20} className="text-coffee-400" />
             </div>
             <div>
-              <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-1">Email</p>
-              <a href="mailto:info@caffealex.com" className="text-coffee-100 text-lg hover:text-white transition-colors">
-                info@caffealex.com
+              <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-1">
+                Email
+              </p>
+              <a
+                href="mailto:caricola.alessandro@gmail.com"
+                className="text-coffee-100 text-lg hover:text-white transition-colors"
+              >
+                {/* info@caffealex.com */}
+                caricola.alessandro@gmail.com
               </a>
             </div>
           </div>
@@ -88,12 +112,20 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
 
         {/* Social */}
         <div className="mt-16 pt-16 border-t border-coffee-800">
-          <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-6">Seguici</p>
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-6">
+            Seguici
+          </p>
           <div className="flex gap-4">
-            <a href="#" className="w-12 h-12 bg-coffee-900 border border-coffee-800 flex items-center justify-center hover:border-coffee-400 hover:text-white transition-all text-coffee-400">
+            <a
+              href="#"
+              className="w-12 h-12 bg-coffee-900 border border-coffee-800 flex items-center justify-center hover:border-coffee-400 hover:text-white transition-all text-coffee-400"
+            >
               <Instagram size={18} />
             </a>
-            <a href="#" className="w-12 h-12 bg-coffee-900 border border-coffee-800 flex items-center justify-center hover:border-coffee-400 hover:text-white transition-all text-coffee-400">
+            <a
+              href="#"
+              className="w-12 h-12 bg-coffee-900 border border-coffee-800 flex items-center justify-center hover:border-coffee-400 hover:text-white transition-all text-coffee-400"
+            >
               <Facebook size={18} />
             </a>
           </div>
@@ -114,17 +146,10 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
 
       {/* ── CTA finale ────────────────────────────────────────────────────────── */}
       <section className="py-24 px-6 text-center bg-coffee-950 border-t border-coffee-900">
-        <p className="text-coffee-400 text-sm tracking-[0.3em] uppercase mb-10">
+        <p className="text-coffee-400 text-sm tracking-[0.3em] uppercase">
           Non esitare a contattarci
         </p>
-        <button
-          onClick={onBack}
-          className="px-12 py-6 border-2 border-coffee-800 text-white font-bold tracking-[0.4em] uppercase text-sm hover:bg-white hover:text-coffee-950 transition-all duration-500"
-        >
-          Torna alla Home
-        </button>
       </section>
-
     </div>
   );
 };

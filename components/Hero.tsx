@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce text-white/50 cursor-pointer z-20" onClick={() => scrollToSection(Section.PRODOTTI)}>
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce text-white/50 cursor-pointer z-20" onClick={() => window.scrollBy({ top: window.innerHeight * 0.4, behavior: 'smooth' })}>
         <ChevronDown size={32} strokeWidth={1} />
       </div>
     </div>

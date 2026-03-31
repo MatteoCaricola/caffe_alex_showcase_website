@@ -1,45 +1,56 @@
-import React from 'react';
-import { CoffeeProduct } from '../types';
+import React from "react";
+import { CoffeeProduct } from "../types";
 
 const PRODUCTS: CoffeeProduct[] = [
   {
     id: 1,
     name: "Miscela Gold",
     origin: "Ethiopia",
-    roast: "Light",
+    roast: "Robusta",
     image: `${import.meta.env.BASE_URL}assets/homePage/presentation_gold.png`,
     tags: ["Floral", "Citrus", "Bright"],
-    description: "A delicate light roast with notes of jasmine and bergamot. A true classic."
+    description:
+      "Una tostatura scura e corposa, dal gusto profondo e persistente. Un vero classico.",
   },
   {
     id: 2,
     name: "Miscela Black",
     origin: "Colombia",
-    roast: "Medium",
+    roast: "Media",
     image: `${import.meta.env.BASE_URL}assets/homePage/presentation_black.png`,
     tags: ["Caramel", "Nutty", "Balanced"],
-    description: "Our signature medium roast. A harmonious balance of caramel sweetness."
+    description:
+      "La nostra miscela a tostatura media, espressione del nostro caffè. Un gusto armonioso e perfettamente bilanciato.",
   },
   {
     id: 3,
-    name: "MIscela White",
+    name: "Miscela White",
     origin: "Indonesia",
-    roast: "Dark",
+    roast: "Cremoso",
     image: `${import.meta.env.BASE_URL}assets/homePage/presentation_white.png`,
     tags: ["Earthy", "Spicy", "Full Body"],
-    description: "Bold and intense. A dark roast with distinct spicy, earthy undertones."
+    description:
+      "La nostra miscela cremosa, espressione di equilibrio e morbidezza. Un gusto pieno e avvolgente.",
   },
 ];
 
 export const ProductList: React.FC = () => {
   return (
-    <section id="collection" className="bg-coffee-950 py-24 px-6 md:px-12 text-white">
+    <section
+      id="collection"
+      className="bg-coffee-950 py-24 px-6 md:px-12 text-white"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mb-20 text-center">
-          <span className="text-coffee-400 font-bold tracking-[0.2em] text-xs uppercase block mb-4">la nostra selezione</span>
-          <h2 className="font-serif text-4xl md:text-6xl text-white mb-6">Eccellenza curata</h2>
+          <span className="text-coffee-400 font-bold tracking-[0.2em] text-xs uppercase block mb-4">
+            la nostra selezione
+          </span>
+          <h2 className="font-serif text-4xl md:text-6xl text-white mb-6">
+            Eccellenza curata
+          </h2>
           <p className="mx-auto max-w-2xl text-coffee-200 font-light text-lg">
-            Non ci limitiamo a tostare il caffè: creiamo esperienze uniche. Esplora la nostra selezione dei migliori chicchi al mondo.
+            Non ci limitiamo a tostare il caffè: creiamo esperienze uniche.
+            Esplora la nostra selezione dei migliori chicchi al mondo.
           </p>
         </div>
 
@@ -64,7 +75,9 @@ export const ProductList: React.FC = () => {
               {/* Text */}
               <div className="flex flex-col items-center">
                 <span className="mb-2 text-[10px] font-bold tracking-[0.2em] text-coffee-400 uppercase">
-                  {product.origin} • {product.roast} Roast
+                  {product.id !== 3
+                    ? `Tostatura ${product.roast}`
+                    : product.roast}
                 </span>
                 <h3 className="mb-4 font-serif text-3xl text-white group-hover:text-coffee-300 transition-colors">
                   {product.name}
@@ -79,7 +92,9 @@ export const ProductList: React.FC = () => {
         </div>
 
         <div className="mt-20 text-center">
-          <p className="text-coffee-300 italic text-sm">Visit our roastery to purchase exclusive batches.</p>
+          <p className="text-coffee-300 italic text-sm">
+            Scopri tutte le nostre miscele e trova il tuo caffè ideale nella sezione "PRODOTTI"
+          </p>
         </div>
       </div>
     </section>

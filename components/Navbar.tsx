@@ -45,8 +45,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, ac
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled || currentView === 'details' 
-        ? 'bg-white/95 text-coffee-900 shadow-md backdrop-blur-sm py-2' 
+      isScrolled
+        ? 'bg-white/95 text-coffee-900 shadow-md backdrop-blur-sm py-2'
         : 'bg-transparent text-white py-6'
     }`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, ac
 
         {/* Logo Center */}
         <div className="flex justify-center w-1/3 cursor-pointer" onClick={() => scrollToSection(Section.HOME)}>
-          <Logo light={!isScrolled && currentView !== 'details'} />
+          <Logo light={!isScrolled} />
         </div>
 
         {/* Desktop Links Right */}

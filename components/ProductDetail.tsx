@@ -1,6 +1,5 @@
-
-import React from 'react';
-import { ArrowLeft } from 'lucide-react';
+import React from "react";
+import { ArrowLeft } from "lucide-react";
 
 interface ProductDetailProps {
   onBack: () => void;
@@ -12,9 +11,13 @@ interface ProductCardProps {
   image: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, description, image }) => (
+const ProductCard: React.FC<ProductCardProps> = ({
+  title,
+  description,
+  image,
+}) => (
   <div className="flex flex-col group cursor-pointer">
-    <div className="aspect-[3/4] overflow-hidden bg-[#f4f1ee] mb-6 flex items-center justify-center p-8">
+    <div className="aspect-[3/4] overflow-hidden bg-[#f4f1ee] mb-6 flex items-center justify-center px-3 py-2 md:p-8">
       <img
         src={image}
         alt={title}
@@ -37,62 +40,62 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
     {
       title: "Caffè in grani - Miscela Gold",
       description: "Caffè in grani - Miscela Gold.",
-      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_gold.png`
+      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_gold.png`,
     },
     {
       title: "Caffè in grani - Miscela Black",
       description: "Caffè in grani - Miscela Black.",
-      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_black.png`
+      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_black.png`,
     },
     {
       title: "Caffè in grani - Miscela White",
       description: "Caffè in grani - Miscela White.",
-      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_white.png`
-    }
+      image: `${import.meta.env.BASE_URL}assets/homePage/presentation_white.png`,
+    },
   ];
 
   const productGinseng = [
     {
       title: "Caffè al Ginseng - Rosso",
       description: "Caffè al Ginseng - Rosso.",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_rosso.png`
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_rosso.png`,
     },
     {
       title: "Caffè al Ginseng - Primus",
       description: "Caffè al Ginseng - Primus.",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_primus.png`
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_primus.png`,
     },
     {
       title: "Caffè al Ginseng - Platinum",
       description: "Caffè al Ginseng - Platinum.",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum.png`
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum.png`,
     },
     {
       title: "Caffè al Ginseng - Platinum senza saccarosio",
       description: "Caffè al Ginseng - Platinum senza saccarosio.",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum_senza_saccarosio.png`
-    }
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum_senza_saccarosio.png`,
+    },
   ];
 
   const productCialde = [
     {
       title: "Caffè in ciale E.S.E.",
       description: "Caffè in ciale E.S.E.",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_cialde.png`
-    }
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_cialde.png`,
+    },
   ];
 
   const productZuccher = [
     {
       title: "Zucchero bianco extra fine - alta solubilità",
       description: "Zucchero bianco extra fine - alta solubilità",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero.png`
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero.png`,
     },
     {
       title: "Zucchero di canna extra fine",
       description: "Zucchero di canna extra fine",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero_canna.png`
-    }
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero_canna.png`,
+    },
   ];
 
   return (
@@ -107,16 +110,20 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
             className="h-full w-full object-cover opacity-60"
           />
           {/* Red Gradient Overlay */}
-
         </div>
 
         {/* Navigation Button */}
         <button
           onClick={onBack}
-          className="absolute top-10 left-6 md:left-12 flex items-center gap-2 text-white/70 hover:text-white transition-colors z-20 group"
+          className="absolute top-28 md:top-32 left-6 md:left-12 flex items-center gap-2 text-white/70 hover:text-white transition-colors z-20 group"
         >
-          <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
-          <span className="text-xs font-bold tracking-widest uppercase">Torna alla Home</span>
+          <ArrowLeft
+            size={20}
+            className="transition-transform group-hover:-translate-x-1"
+          />
+          <span className="text-xs font-bold tracking-widest uppercase">
+            Torna alla Home
+          </span>
         </button>
 
         {/* Hero Text Content */}
@@ -125,7 +132,8 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
             I nostri caffè
           </h1>
           <p className="text-white/95 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto tracking-wide italic">
-            Grani, macinato, capsule e cialde: scegli il tuo formato preferito per gustare un caffè indimenticabile.
+            Grani, macinato, capsule e cialde: scegli il tuo formato preferito
+            per gustare un caffè indimenticabile.
           </p>
         </div>
       </div>
@@ -135,7 +143,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         <div className="max-w-7xl mx-auto">
           {/* Section Caffè Header */}
           <div className="mb-16">
-            <h2 className="font-serif text-4xl text-coffee-950 mb-2">Caffè in grani</h2>
+            <h2 className="font-serif text-4xl text-coffee-950 mb-2">
+              Caffè in grani
+            </h2>
             <div className="h-[1px] w-20 bg-red-600"></div>
           </div>
 
@@ -153,12 +163,16 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         </div>
       </section>
 
+      <hr className="border-t border-coffee-200 mx-6 md:mx-12" />
+
       {/* Main Product Catalog Section Ginseng */}
       <section className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Section Ginseng Header */}
           <div className="mb-16">
-            <h2 className="font-serif text-4xl text-coffee-950 mb-2">Caffè Ginseng</h2>
+            <h2 className="font-serif text-4xl text-coffee-950 mb-2">
+              Caffè Ginseng
+            </h2>
             <div className="h-[1px] w-20 bg-red-600"></div>
           </div>
 
@@ -176,12 +190,16 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         </div>
       </section>
 
+      <hr className="border-t border-coffee-200 mx-6 md:mx-12" />
+
       {/* Main Product Catalog Section Cialde */}
       <section className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Section Cialde Header */}
           <div className="mb-16">
-            <h2 className="font-serif text-4xl text-coffee-950 mb-2">Caffè Cialde</h2>
+            <h2 className="font-serif text-4xl text-coffee-950 mb-2">
+              Caffè Cialde
+            </h2>
             <div className="h-[1px] w-20 bg-red-600"></div>
           </div>
 
@@ -199,12 +217,16 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         </div>
       </section>
 
+      <hr className="border-t border-coffee-200 mx-6 md:mx-12" />
+
       {/* Main Product Catalog Section Zucchero */}
       <section className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Section Zucchero Header */}
           <div className="mb-16">
-            <h2 className="font-serif text-4xl text-coffee-950 mb-2">Zucchero</h2>
+            <h2 className="font-serif text-4xl text-coffee-950 mb-2">
+              Zucchero
+            </h2>
             <div className="h-[1px] w-20 bg-red-600"></div>
           </div>
 
@@ -225,16 +247,22 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
       {/* Second Section - Focus Title */}
       <section className="py-24 px-6 md:px-12 bg-[#f9f7f5] border-t border-coffee-100">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="text-red-600 font-bold tracking-[0.4em] text-xs uppercase block mb-4">Solo Eccellenza</span>
-          <h2 className="font-serif text-5xl text-coffee-950 mb-8 max-w-3xl mx-auto leading-tight">La scelta perfetta per ogni tua pausa</h2>
+          <span className="text-red-600 font-bold tracking-[0.4em] text-xs uppercase block mb-4">
+            Solo Eccellenza
+          </span>
+          <h2 className="font-serif text-5xl text-coffee-950 mb-8 max-w-3xl mx-auto leading-tight">
+            La scelta perfetta per ogni tua pausa
+          </h2>
           <p className="text-coffee-700 text-lg font-light max-w-2xl mx-auto mb-12">
-            Ogni formato è pensato per garantirti la massima resa aromatica. Dalla macinatura fresca dei grani alla praticità delle capsule in alluminio, la qualità Alex rimane costante.
+            Ogni formato è pensato per garantirti la massima resa aromatica.
+            Dalla macinatura fresca dei grani alla praticità delle cialde, la
+            qualità Alex rimane costante.
           </p>
           <button
             onClick={onBack}
             className="px-12 py-4 bg-coffee-950 text-white font-bold tracking-widest uppercase text-xs hover:bg-red-700 transition-all hover:scale-105"
           >
-            Ritorna alla selezione
+            Ritorna alla Home
           </button>
         </div>
       </section>

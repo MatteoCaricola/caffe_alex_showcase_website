@@ -49,21 +49,25 @@ siamo qui per realizzarlo insieme a te.`;
       label: "Kiwi Bar",
     },
     {
+      src: `${import.meta.env.BASE_URL}assets/clienti/da_rossella.jpeg`,
+      label: "Ristorante Da Rossella",
+    },
+    {
       src: `${import.meta.env.BASE_URL}assets/clienti/lulu.jpeg`,
       label: "Pasticceria Lulù",
     },
     {
-      src: `${import.meta.env.BASE_URL}assets/clienti/da_rossella.jpeg`,
+      src: `${import.meta.env.BASE_URL}assets/clienti/da_rossella_2.jpg`,
       label: "Ristorante Da Rossella",
     },
   ];
 
   // ─── CAROSELLO: animazione JS + swipe touch ──────────────────────────────────
-  const marqueeRef  = useRef<HTMLDivElement>(null);
-  const posRef      = useRef(0);
-  const isDragging  = useRef(false);
-  const lastTouchX  = useRef(0);
-  const rafRef      = useRef<number>(0);
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const posRef = useRef(0);
+  const isDragging = useRef(false);
+  const lastTouchX = useRef(0);
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
     const el = marqueeRef.current;
@@ -97,11 +101,13 @@ siamo qui per realizzarlo insieme a te.`;
 
     const loopAt = marqueeRef.current.scrollWidth / 2;
     posRef.current += delta;
-    while (posRef.current > 0)        posRef.current -= loopAt;
+    while (posRef.current > 0) posRef.current -= loopAt;
     while (posRef.current <= -loopAt) posRef.current += loopAt;
   };
 
-  const handleTouchEnd = () => { isDragging.current = false; };
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+  };
 
   // ─────────────────────────────────────────────────────────────────────────────
 
@@ -123,8 +129,13 @@ siamo qui per realizzarlo insieme a te.`;
             onClick={onBack}
             className="flex items-center gap-2 text-coffee-400 hover:text-white transition-colors mb-8 md:mb-16 group"
           >
-            <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
-            <span className="text-xs font-bold tracking-[0.3em] uppercase">Torna alla Home</span>
+            <ArrowLeft
+              size={20}
+              className="transition-transform group-hover:-translate-x-1"
+            />
+            <span className="text-xs font-bold tracking-[0.3em] uppercase">
+              Torna alla Home
+            </span>
           </button>
 
           <span className="text-coffee-500 font-bold tracking-[0.5em] text-xs uppercase block mb-6">
@@ -230,8 +241,17 @@ siamo qui per realizzarlo insieme a te.`;
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <div ref={marqueeRef} className="flex w-max" style={{ willChange: 'transform' }}>
-            {[...clientPhotos, ...clientPhotos, ...clientPhotos, ...clientPhotos].map((photo, i) => (
+          <div
+            ref={marqueeRef}
+            className="flex w-max"
+            style={{ willChange: "transform" }}
+          >
+            {[
+              ...clientPhotos,
+              ...clientPhotos,
+              ...clientPhotos,
+              ...clientPhotos,
+            ].map((photo, i) => (
               <div key={i} className="w-72 shrink-0 mr-6">
                 <div className="aspect-[3/4] overflow-hidden rounded-sm">
                   <img
@@ -247,20 +267,13 @@ siamo qui per realizzarlo insieme a te.`;
             ))}
           </div>
         </div>
-
       </section>
 
       {/* CTA finale */}
       <section className="py-24 px-6 text-center bg-coffee-950 border-t border-coffee-900">
-        <p className="text-coffee-400 text-sm tracking-[0.3em] uppercase mb-10">
+        <p className="text-coffee-400 text-sm tracking-[0.3em] uppercase">
           Interessato? Vieni a trovarci o contattaci
         </p>
-        <button
-          onClick={onBack}
-          className="px-12 py-6 border-2 border-coffee-800 text-white font-bold tracking-[0.4em] uppercase text-sm hover:bg-white hover:text-coffee-950 transition-all duration-500"
-        >
-          Torna alla Home
-        </button>
       </section>
     </div>
   );

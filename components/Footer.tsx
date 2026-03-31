@@ -1,14 +1,22 @@
-
-import React from 'react';
-import { Instagram, Twitter, Facebook, Mail, MapPin, Phone } from 'lucide-react';
-import { Logo } from './Logo';
+import React from "react";
+import {
+  Instagram,
+  Twitter,
+  Facebook,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
+import { Logo } from "./Logo";
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contatti" className="bg-coffee-50 text-coffee-900 border-t border-coffee-200">
+    <footer
+      id="contatti"
+      className="bg-coffee-50 text-coffee-900 border-t border-coffee-200"
+    >
       <div className="mx-auto max-w-7xl px-6 py-20 md:px-12">
         <div className="flex flex-col items-center text-center">
-
           <div className="mb-8 scale-125">
             <Logo />
           </div>
@@ -18,9 +26,24 @@ export const Footer: React.FC = () => {
           </p>
 
           <div className="mb-12 flex gap-8">
-            <a href="#" className="text-coffee-900 transition-transform hover:scale-110"><Instagram size={24} /></a>
-            <a href="#" className="text-coffee-900 transition-transform hover:scale-110"><Twitter size={24} /></a>
-            <a href="#" className="text-coffee-900 transition-transform hover:scale-110"><Facebook size={24} /></a>
+            <a
+              href="#"
+              className="text-coffee-900 transition-transform hover:scale-110"
+            >
+              <Instagram size={24} />
+            </a>
+            <a
+              href="#"
+              className="text-coffee-900 transition-transform hover:scale-110"
+            >
+              <Twitter size={24} />
+            </a>
+            <a
+              href="#"
+              className="text-coffee-900 transition-transform hover:scale-110"
+            >
+              <Facebook size={24} />
+            </a>
           </div>
 
           <div className="grid w-full max-w-2xl gap-8 border-t border-coffee-200 pt-10 text-sm md:grid-cols-3">
@@ -30,14 +53,13 @@ export const Footer: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-2">
               <Mail size={20} className="text-coffee-500" />
-              <span>info@caffealex.com</span>
+              <span>caricola.alessandro@gmail.com</span>
             </div>
             <div className="flex flex-col items-center gap-2">
               <Phone size={20} className="text-coffee-500" />
-              <span>+39 345 678 9012</span>
+              <span>+39 339 445 8758</span>
             </div>
           </div>
-
         </div>
 
         <div className="mt-16 text-center text-xs text-coffee-400">

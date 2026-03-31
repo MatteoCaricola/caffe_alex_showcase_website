@@ -3,7 +3,7 @@ export interface CoffeeProduct {
   id: number;
   name: string;
   origin: string;
-  roast: 'Light' | 'Medium' | 'Dark';
+  roast: 'Leggera' | 'Media' | 'Robusta' | 'Cremoso';
   image: string;
   tags: string[];
   description: string;
