@@ -4,13 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const COOKIE_KEY = 'caffe_alex_cookie_consent';
 
 export const CookieBanner: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(() => !localStorage.getItem(COOKIE_KEY));
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const consent = localStorage.getItem(COOKIE_KEY);
-    if (!consent) setVisible(true);
-  }, []);
 
   const accept = () => {
     localStorage.setItem(COOKIE_KEY, 'accepted');

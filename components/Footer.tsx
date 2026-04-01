@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
           >
             Privacy Policy & Cookie Policy
           </button>
-          <p className="mt-1 text-coffee-200 text-[10px] select-none">v0.0.15</p>
+          <p className="mt-1 text-coffee-200 text-[10px] select-none">v0.0.16</p>
         </div>
       </div>
     </footer>
