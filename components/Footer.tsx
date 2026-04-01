@@ -1,15 +1,11 @@
 import React from "react";
-import {
-  Instagram,
-  Twitter,
-  Facebook,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 
 export const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <footer
       id="contatti"
@@ -24,27 +20,6 @@ export const Footer: React.FC = () => {
           <p className="mb-10 max-w-md font-serif text-lg leading-relaxed text-coffee-700 italic">
             "Coffee is a language in itself."
           </p>
-
-          <div className="mb-12 flex gap-8">
-            <a
-              href="#"
-              className="text-coffee-900 transition-transform hover:scale-110"
-            >
-              <Instagram size={24} />
-            </a>
-            <a
-              href="#"
-              className="text-coffee-900 transition-transform hover:scale-110"
-            >
-              <Twitter size={24} />
-            </a>
-            <a
-              href="#"
-              className="text-coffee-900 transition-transform hover:scale-110"
-            >
-              <Facebook size={24} />
-            </a>
-          </div>
 
           <div className="grid w-full max-w-2xl gap-8 border-t border-coffee-200 pt-10 text-sm md:grid-cols-3">
             <div className="flex flex-col items-center gap-2">
@@ -64,7 +39,13 @@ export const Footer: React.FC = () => {
 
         <div className="mt-16 text-center text-xs text-coffee-400">
           <p>&copy; 2024 Caffè Alex. All rights reserved.</p>
-          <p className="mt-1 text-coffee-200 text-[10px] select-none">v0.0.14</p>
+          <button
+            onClick={() => navigate('/privacy')}
+            className="mt-2 underline underline-offset-2 hover:text-coffee-600 transition-colors"
+          >
+            Privacy Policy & Cookie Policy
+          </button>
+          <p className="mt-1 text-coffee-200 text-[10px] select-none">v0.0.15</p>
         </div>
       </div>
     </footer>

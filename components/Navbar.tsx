@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, ac
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks = [   
     { label: 'Home', section: Section.HOME },
     { label: 'Prodotti', section: Section.PRODOTTI },
     { label: 'Servizi', section: Section.SERVIZI },

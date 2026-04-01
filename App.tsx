@@ -11,6 +11,8 @@ import { CraftDetail } from './components/CraftDetail';
 import { ContattiDetail } from './components/ContattiDetail';
 import { BioSection } from './components/BioSection';
 import { Footer } from './components/Footer';
+import { CookieBanner } from './components/CookieBanner';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { Section } from './types';
 
 function ScrollToTop() {
@@ -54,11 +56,13 @@ function App() {
   return (
     <div className="min-h-screen bg-white font-sans text-coffee-900">
       <ScrollToTop />
-      <Navbar
-        scrollToSection={scrollToSection}
-        currentView={isHome ? 'home' : 'details'}
-        activeView={activeView}
-      />
+      {location.pathname !== '/privacy' && (
+        <Navbar
+          scrollToSection={scrollToSection}
+          currentView={isHome ? 'home' : 'details'}
+          activeView={activeView}
+        />
+      )}
 
       <main>
         <Routes>
@@ -74,10 +78,12 @@ function App() {
           <Route path="/prodotti"  element={<ProductDetail onBack={() => navigate('/')} />} />
           <Route path="/servizi"   element={<CraftDetail   onBack={() => navigate('/')} />} />
           <Route path="/contatti"  element={<ContattiDetail onBack={() => navigate('/')} />} />
+          <Route path="/privacy"   element={<PrivacyPolicy />} />
         </Routes>
       </main>
 
       <Footer />
+      <CookieBanner />
     </div>
   );
 }

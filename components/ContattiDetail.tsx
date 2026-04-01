@@ -111,7 +111,7 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
         </div>
 
         {/* Social */}
-        <div className="mt-16 pt-16 border-t border-coffee-800">
+        {/* <div className="mt-16 pt-16 border-t border-coffee-800">
           <p className="text-xs font-bold tracking-[0.3em] uppercase text-coffee-500 mb-6">
             Seguici
           </p>
@@ -129,7 +129,7 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
               <Facebook size={18} />
             </a>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* ── Citazione ─────────────────────────────────────────────────────────── */}

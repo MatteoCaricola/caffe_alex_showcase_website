@@ -58,7 +58,7 @@ export const BioSection: React.FC = () => {
                     "
                   </span>
                   La qualità non si suggerisce, si dimostra. Un grande caffè non
-                  si beve soltanto: si ascolta, si respira, si vive.
+                  si beve soltanto: <br /> si ascolta, si respira, si vive.
                   <span className="text-4xl text-coffee-700 opacity-50 ml-2">
                     "
                   </span>
