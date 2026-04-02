@@ -1,10 +1,9 @@
 # To Do List — Caffè Alex Website
 
 ## Da fare
-- [ ] Modificare tutte le immagini presente nella sezione prodotti, renderle uniformi sia per grandezze, sfondo e tutto il resto. 
+- [ ] Modificare tutte le immagini presente nella sezione prodotti, mancamp solo quelle della sezione ginseng () e zucchero renderle uguali (982 -650). 
 - [ ] Modificare il logo sia nella condivisoine del ling (SEO Google) che in tutte le parti dell'applicativo e far combaciare il font con le scritte in HP
 - [ ]Aggiungere le icone commentate dei social nel caso vengano create le pagine social
-- [ ] verificare le parole chiavi di meta, valuta se aggiungere altro
 - [ ] comprare il dominio
 - [ ] Far controllare tutti i testi a papà
 - [ ] In futuro dopo aver creato e-commerce creare collegametno nella sezione prodotti
@@ -17,6 +16,7 @@ ecommerca
 - [ ] 
 - [ ] 
 - [ ] 
+
 ## In corso
 - [ ] 
 
@@ -24,4 +24,4 @@ ecommerca
 - [x] Gestione rotte (Prodotti, Servizi, Contatti)
 - [x] Swipe carosello da mobile
 - [x] Cookie banner + Privacy Policy
-- [x] SEO meta tag
+- [x] SEO meta tag 
