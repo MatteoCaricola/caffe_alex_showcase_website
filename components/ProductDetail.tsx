@@ -28,7 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <h3 className="font-serif text-2xl text-coffee-950 group-hover:text-red-700 transition-colors">
         {title}
       </h3>
-      <p className="text-coffee-600 text-sm leading-relaxed font-light line-clamp-2">
+      <p className="text-coffee-600 text-sm leading-relaxed font-light line-clamp-5">
         {description}
       </p>
     </div>
@@ -39,17 +39,20 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
   const productCaffe = [
     {
       title: "Caffè in grani - Miscela Gold",
-      description: "Caffè in grani - Miscela Gold.",
+      description:
+        "La miscela più pregiata, dal gusto ricco ed elegante. Si distingue per l’aroma intenso, il perfetto equilibrio tra corpo e dolcezza e una crema fine e persistente. Ideale per un espresso di alta qualità.",
       image: `${import.meta.env.BASE_URL}assets/homePage/presentation_gold.png`,
     },
     {
       title: "Caffè in grani - Miscela Black",
-      description: "Caffè in grani - Miscela Black.",
+      description:
+        "Una miscela dal carattere deciso, con un gusto pieno e una buona intensità aromatica. Perfetta per chi cerca un caffè corposo e strutturato, leggermente più diretto rispetto alla Gold.",
       image: `${import.meta.env.BASE_URL}assets/homePage/presentation_black.png`,
     },
     {
       title: "Caffè in grani - Miscela White",
-      description: "Caffè in grani - Miscela White.",
+      description:
+        "Equilibrata e cremosa, offre un gusto morbido e avvolgente con una texture più vellutata. Una valida alternativa alla Black, ideale per chi preferisce un espresso più rotondo e delicato.v",
       image: `${import.meta.env.BASE_URL}assets/homePage/presentation_white.png`,
     },
   ];
@@ -57,22 +60,26 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
   const productGinseng = [
     {
       title: "Caffè al Ginseng - Rosso",
-      description: "Caffè al Ginseng - Rosso.",
+      description:
+        "Prodotto solubile in busta da 500g, senza glutine, senza grassi idrogenati e senza OGM. Consente di preparare una bevanda dall’intenso profumo di caffè al ginseng rosso e con un’elevata cremosità.",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_rosso.png`,
     },
     {
       title: "Caffè al Ginseng - Primus",
-      description: "Caffè al Ginseng - Primus.",
+      description:
+        "Prodotto solubile in busta da 500g, senza glutine, senza grassi idrogenati e senza OGM.  Consente di preparare un caffè al ginseng estremamente cremoso e con una spiccata nota di caffelatte e un caratteristico retrogusto di caramello",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_primus.png`,
     },
     {
       title: "Caffè al Ginseng - Platinum",
-      description: "Caffè al Ginseng - Platinum.",
+      description:
+        "Prodotto solubile in busta da 500g, senza glutine, senza grassi idrogenati e senza OGM. Consente di preparare un caffè al ginseng corposo, con un’ottima cremosità e una piacevole nota di caffè e caramello.",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum.png`,
     },
     {
       title: "Caffè al Ginseng - Platinum senza saccarosio",
-      description: "Caffè al Ginseng - Platinum senza saccarosio.",
+      description:
+        "Prodotto solubile in busta da 500g, senza glutine, senza grassi idrogenati e OGM. Permette di ottenere un caffè al ginseng corposo e cremoso, con note di caffè e caramello. Senza saccarosio, ha un gusto amaro che consente di dosare lo zucchero secondo le proprie preferenze.",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum_senza_saccarosio.png`,
     },
   ];
@@ -80,7 +87,8 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
   const productCialde = [
     {
       title: "Caffè in ciale E.S.E.",
-      description: "Caffè in ciale E.S.E.",
+      description:
+        "Pratiche e veloci da utilizzare, garantiscono un espresso sempre perfetto, con aroma intenso e crema consistente.",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_cialde.png`,
     },
   ];
@@ -88,12 +96,14 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
   const productZuccher = [
     {
       title: "Zucchero bianco extra fine - alta solubilità",
-      description: "Zucchero bianco extra fine - alta solubilità",
+      description:
+        "Cristalli finissimi che si sciolgono rapidamente, ideali per dolcificare ogni bevanda senza alterarne il gusto.",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero.png`,
     },
     {
-      title: "Zucchero di canna extra fine",
-      description: "Zucchero di canna extra fine",
+      title: "Zucchero di canna",
+      description:
+        "Naturale e dal sapore leggermente caramellato, dona un tocco aromatico in più a caffè e bevande calde.",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero_canna.png`,
     },
   ];
