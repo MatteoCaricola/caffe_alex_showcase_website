@@ -62,8 +62,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, ac
         </div>
 
         {/* Logo Center */}
-        <div className="flex justify-center w-1/3 cursor-pointer" onClick={() => scrollToSection(Section.HOME)}>
-          <Logo light={!isScrolled} />
+        <div className="flex justify-center w-full md:w-1/3 cursor-pointer" onClick={() => scrollToSection(Section.HOME)}>
+          <Logo light={!isScrolled} width={200} widthMobile={200} />
         </div>
 
         {/* Desktop Links Right */}

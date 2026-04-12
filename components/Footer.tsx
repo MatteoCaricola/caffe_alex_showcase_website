@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
       <div className="mx-auto max-w-7xl px-6 py-20 md:px-12">
         <div className="flex flex-col items-center text-center">
           <div className="mb-8 scale-125">
-            <Logo />
+            <Logo light={false} width={300} widthMobile={250}/>
           </div>
 
           <p className="mb-10 max-w-md font-serif text-lg leading-relaxed text-coffee-700 italic">

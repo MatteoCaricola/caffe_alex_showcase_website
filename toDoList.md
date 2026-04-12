@@ -2,7 +2,6 @@
 
 ## Da fare
 - [ ] Modificare tutte le immagini presente nella sezione prodotti, mancamp solo quelle della sezione ginseng () e zucchero renderle uguali (982 -650). 
-- [ ] Modificare il logo sia nella condivisoine del ling (SEO Google) che in tutte le parti dell'applicativo e far combaciare il font con le scritte in HP
 - [ ]Aggiungere le icone commentate dei social nel caso vengano create le pagine social
 - [ ] comprare il dominio
 - [ ] Far controllare tutti i testi a papà
