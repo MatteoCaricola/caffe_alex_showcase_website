@@ -46,8 +46,8 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, ac
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled
-        ? 'bg-white/95 text-coffee-900 shadow-md backdrop-blur-sm py-2'
-        : 'bg-transparent text-white py-6'
+        ? 'bg-white/95 text-coffee-900 shadow-md backdrop-blur-sm py-1'
+        : 'bg-transparent text-white py-3'
     }`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
 

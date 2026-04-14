@@ -16,7 +16,7 @@ export const ContattiDetail: React.FC<ContattiDetailProps> = ({ onBack }) => {
   return (
     <div className="bg-coffee-950 min-h-screen text-coffee-50 overflow-hidden">
       {/* ── Hero ──────────────────────────────────────────────────────────────── */}
-      <div className="relative h-[75vh] md:h-screen flex flex-col justify-start px-6 md:px-24 pt-28 md:pt-32">
+      <div className="relative h-[75vh] md:h-screen flex flex-col justify-start px-6 md:px-24 pt-52 md:pt-44">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&q=80&w=2000"

@@ -80,7 +80,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
       title: "Caffè al Ginseng - Platinum senza saccarosio",
       description:
         "Prodotto solubile in busta da 500g, senza glutine, senza grassi idrogenati e OGM. Permette di ottenere un caffè al ginseng corposo e cremoso, con note di caffè e caramello. Senza saccarosio, ha un gusto amaro che consente di dosare lo zucchero secondo le proprie preferenze.",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum_senza_saccarosio.png`,
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_platinum_senza_saccarosio.jpeg`,
     },
   ];
 
@@ -104,7 +104,13 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
       title: "Zucchero di canna",
       description:
         "Naturale e dal sapore leggermente caramellato, dona un tocco aromatico in più a caffè e bevande calde.",
-      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero_canna.png`,
+      image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_zucchero_canna.jpeg`,
+    },
+    {
+      title: "Dolcificante",
+      description:
+        "Dolcificante pratico e leggero, ideale per addolcire bevande calde e fredde senza apportare calorie. Perfetto per chi desidera un’alternativa allo zucchero senza rinunciare al gusto.",
+      image: `${import.meta.env.BASE_URL}assets/product-detail/dolcificante.jpeg`,
     },
   ];
 
@@ -115,7 +121,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src={`${import.meta.env.BASE_URL}assets/product-detail/product_detail_header.png`}
+            src={`${import.meta.env.BASE_URL}assets/product-detail/product_detail_header.jpeg`}
             alt="Caffè Alex selection background"
             className="h-full w-full object-cover opacity-60"
           />
@@ -125,7 +131,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         {/* Navigation Button */}
         <button
           onClick={onBack}
-          className="absolute top-28 md:top-32 left-6 md:left-12 flex items-center gap-2 text-white/70 hover:text-white transition-colors z-20 group"
+          className="absolute top-52 md:top-40 left-6 md:left-12 flex items-center gap-2 text-white/70 hover:text-white transition-colors z-20 group"
         >
           <ArrowLeft
             size={20}
@@ -137,7 +143,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         </button>
 
         {/* Hero Text Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+        <div className="relative z-10 text-center px-6 max-w-4xl mt-36 md:mt-0">
           <h1 className="text-white font-serif text-5xl md:text-8xl mb-8 tracking-tighter drop-shadow-2xl">
             I nostri caffè
           </h1>
