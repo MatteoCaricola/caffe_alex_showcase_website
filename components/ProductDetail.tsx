@@ -67,7 +67,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
     {
       title: "Caffè al Ginseng - Primus",
       description:
-        "Prodotto solubile in busta da 500g, senza glutine, senza grassi idrogenati e senza OGM.  Consente di preparare un caffè al ginseng estremamente cremoso e con una spiccata nota di caffelatte e un caratteristico retrogusto di caramello",
+        "Prodotto solubile in busta da 500g, senza glutine, senza grassi idrogenati e senza OGM.  Consente di preparare un caffè al ginseng estremamente cremoso e con una spiccata nota di caffelatte e un caratteristico retrogusto di nocciola",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_ginseng_primus.png`,
     },
     {
@@ -86,7 +86,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
 
   const productCialde = [
     {
-      title: "Caffè in ciale E.S.E.",
+      title: "Caffè in cialde E.S.E.",
       description:
         "Pratiche e veloci da utilizzare, garantiscono un espresso sempre perfetto, con aroma intenso e crema consistente.",
       image: `${import.meta.env.BASE_URL}assets/product-detail/presentation_cialde.png`,
@@ -187,7 +187,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
           {/* Section Ginseng Header */}
           <div className="mb-16">
             <h2 className="font-serif text-4xl text-coffee-950 mb-2">
-              Caffè Ginseng
+              Caffè al Ginseng
             </h2>
             <div className="h-[1px] w-20 bg-red-600"></div>
           </div>
