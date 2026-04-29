@@ -49,16 +49,16 @@ siamo qui per realizzarlo insieme a te.`;
       label: "Kiwi Bar",
     },
     {
-      src: `${import.meta.env.BASE_URL}assets/clienti/da_rossella.jpeg`,
-      label: "Ristorante Da Rossella",
-    },
-    {
-      src: `${import.meta.env.BASE_URL}assets/clienti/lulu.jpeg`,
+      src: `${import.meta.env.BASE_URL}assets/clienti/lulu_caffe.jpeg`,
       label: "Pasticceria Lulù",
     },
     {
       src: `${import.meta.env.BASE_URL}assets/clienti/da_rossella_2.jpg`,
       label: "Ristorante Da Rossella",
+    },
+    {
+      src: `${import.meta.env.BASE_URL}assets/clienti/lulu_cappuccino.jpeg`,
+      label: "Pasticceria Lulù",
     },
   ];
 

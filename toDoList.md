@@ -1,16 +1,13 @@
 # To Do List — Caffè Alex Website
 
 ## Da fare
-- [ ] Modificare tutte le immagini presente nella sezione prodotti, mancamp solo quelle della sezione ginseng () e zucchero renderle uguali (982 -650). 
-- [ ]Aggiungere le icone commentate dei social nel caso vengano create le pagine social
 - [ ] comprare il dominio
-- [ ] Far controllare tutti i testi a papà
 - [ ] In futuro dopo aver creato e-commerce creare collegametno nella sezione prodotti
 - [ ] Far chiedere a papà colori buste sia per grani che capsule
-- [ ] 
+- [ ] Ipotizzare nella sezione servizi qualcosa inerente alle macchinette, vendita, comodato e revisioni
 
 ecommerca
-- [ ] compare buste per spedizone 
+- [ ] 
 - [ ] 
 - [ ] 
 - [ ] 
