@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { CoffeeProduct } from "../types";
 
 const PRODUCTS: CoffeeProduct[] = [
@@ -35,6 +36,7 @@ const PRODUCTS: CoffeeProduct[] = [
 ];
 
 export const ProductList: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section
       id="collection"
@@ -55,46 +57,48 @@ export const ProductList: React.FC = () => {
         </div>
 
         <div className="grid gap-12 md:grid-cols-3">
-          {PRODUCTS.map((product) => (
-            <div
-              key={product.id}
-              className="group relative flex flex-col items-center text-center"
-            >
-              {/* Image Circle */}
-              <div className="mb-8 transition-transform duration-500 group-hover:scale-105 [will-change:transform]">
-                <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-coffee-800 transition-colors duration-500 group-hover:border-coffee-400 shadow-2xl">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-                  />
-                  <div className="absolute inset-0 bg-coffee-950/20 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+          {PRODUCTS.map((product) => {
+            const anchor = "miscela-" + product.name.split(" ").pop()!.toLowerCase();
+            return (
+              <div
+                key={product.id}
+                onClick={() => navigate("/prodotti", { state: { anchor } })}
+                className="group relative flex flex-col items-center text-center cursor-pointer"
+              >
+                <div className="mb-8 transition-transform duration-500 group-hover:scale-105 [will-change:transform]">
+                  <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-coffee-800 transition-colors duration-500 group-hover:border-coffee-400 shadow-2xl">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-coffee-950/20 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="mb-2 text-[10px] font-bold tracking-[0.2em] text-coffee-400 uppercase">
+                    {product.id !== 3 ? `Tostatura ${product.roast}` : product.roast}
+                  </span>
+                  <h3 className="mb-4 font-serif text-3xl text-white group-hover:text-coffee-300 transition-colors">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-coffee-200 opacity-80 max-w-xs">
+                    {product.description}
+                  </p>
+                  <div className="mt-6 w-0 h-[1px] bg-coffee-400 transition-all duration-500 group-hover:w-12"></div>
                 </div>
               </div>
-
-              {/* Text */}
-              <div className="flex flex-col items-center">
-                <span className="mb-2 text-[10px] font-bold tracking-[0.2em] text-coffee-400 uppercase">
-                  {product.id !== 3
-                    ? `Tostatura ${product.roast}`
-                    : product.roast}
-                </span>
-                <h3 className="mb-4 font-serif text-3xl text-white group-hover:text-coffee-300 transition-colors">
-                  {product.name}
-                </h3>
-                <p className="text-sm leading-relaxed text-coffee-200 opacity-80 max-w-xs">
-                  {product.description}
-                </p>
-                <div className="mt-6 w-0 h-[1px] bg-coffee-400 transition-all duration-500 group-hover:w-12"></div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-20 text-center">
-          <p className="text-coffee-300 italic text-sm">
-            Scopri tutte le nostre miscele e trova il tuo caffè ideale nella sezione "PRODOTTI"
-          </p>
+          <button
+            onClick={() => navigate('/prodotti')}
+            className="inline-flex items-center border border-coffee-600 text-coffee-300 hover:border-coffee-400 hover:text-white text-sm font-medium px-8 py-3 transition-colors"
+          >
+            Vai al catalogo prodotti
+          </button>
         </div>
       </div>
     </section>

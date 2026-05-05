@@ -44,12 +44,12 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, ac
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 pointer-events-none ${
       isScrolled
         ? 'bg-white/95 text-coffee-900 shadow-md backdrop-blur-sm py-1'
         : 'bg-transparent text-white py-3'
     }`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12 pointer-events-auto">
 
         {/* Desktop Links Left */}
         <div className="hidden items-center gap-8 md:flex w-1/3">
@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrollToSection, currentView, ac
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white px-6 py-8 text-coffee-900 shadow-xl md:hidden border-t border-gray-100">
+        <div className="absolute top-full left-0 w-full bg-white px-6 py-8 text-coffee-900 shadow-xl md:hidden border-t border-gray-100 pointer-events-auto">
           <div className="flex flex-col gap-6 text-center">
             {navLinks.map((link) => (
               <button

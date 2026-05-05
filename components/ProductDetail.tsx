@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 interface ProductDetailProps {
@@ -36,20 +37,35 @@ const ProductCard: React.FC<ProductCardProps> = ({
 );
 
 export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const anchor = (location.state as { anchor?: string } | null)?.anchor;
+    if (anchor) {
+      setTimeout(() => {
+        const el = document.getElementById(anchor);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, []);
+
   const productCaffe = [
     {
+      id: "miscela-gold",
       title: "Caffè in grani - Miscela Gold",
       description:
         "La miscela più pregiata, dal gusto ricco ed elegante. Si distingue per l’aroma intenso, il perfetto equilibrio tra corpo e dolcezza e una crema fine e persistente. Ideale per un espresso di alta qualità.",
       image: `${import.meta.env.BASE_URL}assets/homePage/presentation_gold.png`,
     },
     {
+      id: "miscela-black",
       title: "Caffè in grani - Miscela Black",
       description:
         "Una miscela dal carattere deciso, con un gusto pieno e una buona intensità aromatica. Perfetta per chi cerca un caffè corposo e strutturato, leggermente più diretto rispetto alla Gold.",
       image: `${import.meta.env.BASE_URL}assets/homePage/presentation_black.png`,
     },
     {
+      id: "miscela-white",
       title: "Caffè in grani - Miscela White",
       description:
         "Equilibrata e cremosa, offre un gusto morbido e avvolgente con una texture più vellutata. Una valida alternativa alla Black, ideale per chi preferisce un espresso più rotondo e delicato.v",
@@ -129,9 +145,9 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
         </div>
 
         {/* Navigation Button */}
-        <button
-          onClick={onBack}
-          className="absolute top-52 md:top-40 left-6 md:left-12 flex items-center gap-2 text-white/70 hover:text-white transition-colors z-20 group"
+        <Link
+          to="/"
+          className="absolute top-52 md:top-40 left-6 md:left-12 flex items-center gap-2 text-white/70 hover:text-white transition-colors z-20 group cursor-pointer"
         >
           <ArrowLeft
             size={20}
@@ -140,7 +156,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
           <span className="text-xs font-bold tracking-widest uppercase">
             Torna alla Home
           </span>
-        </button>
+        </Link>
 
         {/* Hero Text Content */}
         <div className="relative z-10 text-center px-6 max-w-4xl mt-36 md:mt-0">
@@ -168,12 +184,13 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
           {/* Product Grid Caffè */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {productCaffe.map((product, index) => (
-              <ProductCard
-                key={index}
-                title={product.title}
-                description={product.description}
-                image={product.image}
-              />
+              <div key={index} id={product.id}>
+                <ProductCard
+                  title={product.title}
+                  description={product.description}
+                  image={product.image}
+                />
+              </div>
             ))}
           </div>
         </div>

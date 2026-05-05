@@ -26,9 +26,27 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           <span className="block text-2xl md:text-3xl mb-2 tracking-widest font-sans font-light uppercase">Il gusto autentico di</span>
           Caffè Alex
         </h1>
-        <p className="mb-3 max-w-xl text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-white opacity-0 animate-[fadeIn_1s_ease-out_1.1s_forwards] leading-snug">
+        <p className="mb-8 max-w-xl text-2xl sm:text-3xl md:text-4xl font-serif font-normal text-white opacity-0 animate-[fadeIn_1s_ease-out_1.1s_forwards] leading-snug">
           Non solo caffè.<br className="hidden sm:block" /> Un'esperienza irripetibile.
         </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 animate-[fadeIn_1s_ease-out_1.4s_forwards]">
+          <a
+            href="https://wa.me/393394458758?text=Ciao%2C%20vorrei%20informazioni%20sulle%20miscele%20di%20caff%C3%A8%20per%20casa."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-xs font-bold tracking-[0.3em] uppercase px-8 py-3 border-2 border-white/60 text-white/90 hover:border-white hover:text-white transition-all duration-300"
+          >
+            Caffè per casa
+          </a>
+          <a
+            href="https://wa.me/393394458758?text=Ciao%2C%20vorrei%20informazioni%20per%20una%20fornitura%20per%20la%20mia%20attivit%C3%A0."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-xs font-bold tracking-[0.3em] uppercase px-8 py-3 border-2 border-white/60 text-white/90 hover:border-white hover:text-white transition-all duration-300"
+          >
+            Forniture per locali
+          </a>
+        </div>
       </div>
 
       {/* Scroll indicator */}
