@@ -26,7 +26,7 @@ export const ProductsLanding: React.FC = () => {
           to="/prodotti/privato"
           onMouseEnter={() => setHovered("privati")}
           onMouseLeave={() => setHovered(null)}
-          className="relative flex flex-col items-center justify-center px-12 pt-52 md:pt-0 group overflow-hidden cursor-pointer h-[60vh] md:flex-1 md:h-auto transition-opacity duration-500"
+          className="relative flex flex-col items-center justify-center px-12 pt-52 pb-12 md:pt-0 md:pb-0 group overflow-hidden cursor-pointer h-[68vh] md:flex-1 md:h-auto transition-opacity duration-500"
           style={{ opacity: hovered === "aziende" ? 0.6 : 1 }}
         >
           {/* Separatore sfumato */}

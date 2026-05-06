@@ -18,11 +18,34 @@ import { CookieBanner } from './components/CookieBanner';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { Section } from './types';
 
+const IMAGES_TO_PRELOAD = [
+  '/assets/product-detail/product_detail_header.jpeg',
+  '/assets/craft-detail/presentation_tazzione.png',
+  '/assets/craft-detail/presentation_buste.png',
+  '/assets/craft-detail/presentation_accessori.png',
+  '/assets/homePage/presentation_gold.png',
+  '/assets/homePage/presentation_black.png',
+  '/assets/homePage/presentation_white.png',
+  '/assets/product-detail/img_home.png',
+  '/assets/product-detail/img_attivity.png',
+  '/assets/coming_soon.png',
+];
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  return null;
+}
+
+function ImagePreloader() {
+  useEffect(() => {
+    IMAGES_TO_PRELOAD.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
   return null;
 }
 
@@ -59,6 +82,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white font-sans text-coffee-900">
       <ScrollToTop />
+      <ImagePreloader />
       {location.pathname !== '/privacy' && (
         <Navbar
           scrollToSection={scrollToSection}

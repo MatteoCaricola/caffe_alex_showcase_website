@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 interface ProductDetailProps {
-  onBack: () => void;
+  onBack?: () => void;
 }
 
 interface ProductCardProps {
@@ -36,8 +36,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   </div>
 );
 
-export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
+export const ProductDetail: React.FC<ProductDetailProps> = (_props) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const anchor = (location.state as { anchor?: string } | null)?.anchor;
@@ -290,7 +291,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
             Forniture professionali e supporto dedicato per bar, uffici e attività che cercano qualità costante.
           </p>
           <button
-            onClick={onBack}
+            onClick={() => navigate('/contatti')}
             className="px-12 py-4 bg-coffee-950 text-white font-bold tracking-widest uppercase text-xs hover:bg-red-700 transition-all hover:scale-105"
           >
             CONTATTA UN CONSULENTE
