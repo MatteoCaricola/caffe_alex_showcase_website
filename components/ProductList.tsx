@@ -62,7 +62,7 @@ export const ProductList: React.FC = () => {
             return (
               <div
                 key={product.id}
-                onClick={() => navigate("/prodotti", { state: { anchor } })}
+                onClick={() => navigate("/prodotti/azienda", { state: { anchor } })}
                 className="group relative flex flex-col items-center text-center cursor-pointer"
               >
                 <div className="mb-8 transition-transform duration-500 group-hover:scale-105 [will-change:transform]">

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 interface ProductDetailProps {
@@ -36,8 +36,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   </div>
 );
 
-export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
+export const ProductDetailPrivati: React.FC<ProductDetailProps> = (_props) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const anchor = (location.state as { anchor?: string } | null)?.anchor;
@@ -281,19 +282,19 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ onBack }) => {
       <section className="py-24 px-6 md:px-12 bg-[#f9f7f5] border-t border-coffee-100">
         <div className="max-w-7xl mx-auto text-center">
           <span className="text-red-600 font-bold tracking-[0.4em] text-xs uppercase block mb-4">
-            QUALITÀ PROFESSIONALE
+            Solo Eccellenza
           </span>
           <h2 className="font-serif text-5xl text-coffee-950 mb-8 max-w-3xl mx-auto leading-tight">
-            Soluzioni pensate per la tua attività
+            Ogni pausa merita il caffè giusto
           </h2>
           <p className="text-coffee-700 text-lg font-light max-w-2xl mx-auto mb-12">
-            Forniture professionali e supporto dedicato per bar, uffici e attività che cercano qualità costante.
+          Miscele, capsule e formati pensati per accompagnare ogni momento della tua giornata.
           </p>
           <button
-            onClick={onBack}
+            onClick={() => navigate('/prodotti/privato/catalogo')}
             className="px-12 py-4 bg-coffee-950 text-white font-bold tracking-widest uppercase text-xs hover:bg-red-700 transition-all hover:scale-105"
           >
-            CONTATTA UN CONSULENTE
+            SCOPRI IL CATALOGO
           </button>
         </div>
       </section>

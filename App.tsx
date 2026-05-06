@@ -6,7 +6,10 @@ import { Hero } from './components/Hero';
 import { ProdottiSection } from './components/ProdottiSection';
 import { ServiziSection } from './components/ServiziSection';
 import { ProductList } from './components/ProductList';
+import { ProductsLanding } from './components/ProductsLanding';
 import { ProductDetail } from './components/ProductDetail';
+import { ProductDetailPrivati } from './components/ProductDetailPrivati';
+import { ComingSoon } from './components/ComingSoon';
 import { CraftDetail } from './components/CraftDetail';
 import { ContattiDetail } from './components/ContattiDetail';
 import { BioSection } from './components/BioSection';
@@ -30,7 +33,7 @@ function App() {
   const isHome = location.pathname === '/';
 
   const activeView: 'home' | 'product-details' | 'craft-details' | 'contatti' =
-    location.pathname === '/prodotti' ? 'product-details'
+    location.pathname.startsWith('/prodotti') ? 'product-details'
     : location.pathname === '/servizi' ? 'craft-details'
     : location.pathname === '/contatti' ? 'contatti'
     : 'home';
@@ -75,14 +78,17 @@ function App() {
               <BioSection />
             </>
           } />
-          <Route path="/prodotti"  element={<ProductDetail onBack={() => navigate('/')} />} />
+          <Route path="/prodotti"         element={<ProductsLanding />} />
+          <Route path="/prodotti/azienda" element={<ProductDetail onBack={() => navigate('/prodotti')} />} />
+          <Route path="/prodotti/privato"          element={<ProductDetailPrivati onBack={() => navigate('/prodotti')} />} />
+          <Route path="/prodotti/privato/catalogo" element={<ComingSoon />} />
           <Route path="/servizi"   element={<CraftDetail   onBack={() => navigate('/')} />} />
           <Route path="/contatti"  element={<ContattiDetail onBack={() => navigate('/')} />} />
           <Route path="/privacy"   element={<PrivacyPolicy />} />
         </Routes>
       </main>
 
-      <Footer />
+      {!['/prodotti', '/prodotti/privato/catalogo'].includes(location.pathname) && <Footer />}
       <CookieBanner />
     </div>
   );
